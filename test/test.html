@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>テスト</title>
+</head>
+<body>
+<h1>シンプルテストフォーム</h1>
+<form
+  action="https://docs.google.com/forms/d/e/1FAIpQLSfW4Y2fxqNSFALQHkqfUUc8vNXRuYvwwGpcQ8zYTzia-MH37g/formResponse"
+  method="post"
+  target="hidden_iframe"
+  onsubmit="submitted=true;">
+  <p>お名前: <input type="text" name="entry.1208334721" value="シンプルテスト"></p>
+  <p>メッセージ: <input type="text" name="entry.367409614" value="動作確認"></p>
+  <input type="submit" value="送信">
+</form>
+<script>var submitted = false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+  onload="if(submitted){alert('送信完了！');}"></iframe>
+</body>
+</html>
