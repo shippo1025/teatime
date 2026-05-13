@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+#overlay-button {
+    position: absolute;
+    right: 0.5em;
+    top: 3em;
+}
+
+
+input[type=checkbox] {
+    display: none;
+}
+
+/* ======================================================================
+    SP
+====================================================================== */
+
+@media screen and (max-width: 640px) {
+    body {
+        margin: 0;
+        font-family: arial;
+        width: 100vw;
+        height: 100vh;
+        animation: bugfix infinite 1s;
+        -webkit-animation: bugfix infinite 1s;
+        background-image: url(../img/rogo.svg);
+        background-repeat: no-repeat;
+        background-position: 24px 24px;
+    }
+
+    @keyframes bugfix {
+        from {
+            padding: 0;
+        }
+
+        to {
+            padding: 0;
+        }
+    }
+
+    @-webkit-keyframes bugfix {
+        from {
+            padding: 0;
+        }
+
+        to {
+            padding: 0;
+        }
+    }
+
+    h1 {
+        display: none;
+
+    }
+
+
+    /* ハンバーガーボタンの位置 */
+    #overlay-button {
+        position: absolute;
+        right: 2em;
+        top: 1em;
+        padding: 26px 11px;
+        z-index: 5;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    #overlay-button {
+
+        position: fixed;
+        /* 追加 */
+        right: 0.5em;
+        top: 1em;
+
+        z-index: 5;
+        user-select: none;
+        background-color: #fbfbfb;
+        border-radius: 50%;
+    }
+
+    #overlay-button span {
+        height: 4px;
+        width: 35px;
+        border-radius: 2px;
+        background-color: #504341;
+        position: relative;
+        display: block;
+        transition: all .2s ease-in-out;
+    }
+
+    #overlay-button span:before {
+        top: -10px;
+        visibility: visible;
+    }
+
+    #overlay-button span:after {
+        top: 10px;
+    }
+
+    #overlay-button span:before,
+    #overlay-button span:after {
+        height: 4px;
+        width: 35px;
+        border-radius: 2px;
+        background-color: #504341;
+        position: absolute;
+        content: "";
+        transition: all .2s ease-in-out;
+
+    }
+
+    #overlay-button:hover span,
+    #overlay-button:hover span:before,
+    #overlay-button:hover span:after {
+        background: #504341;
+    }
+
+    input[type=checkbox] {
+        display: none;
+
+    }
+
+    input[type=checkbox]:checked~#overlay {
+        visibility: visible;
+    }
+
+    input[type=checkbox]:checked~#overlay-button:hover span,
+    input[type=checkbox]:checked~#overlay-button span {
+        background: transparent;
+
+
+    }
+
+    input[type=checkbox]:checked~#overlay-button span:before {
+        transform: rotate(45deg) translate(7px, 7px);
+
+    }
+
+    input[type=checkbox]:checked~#overlay-button span:after {
+        transform: rotate(-45deg) translate(7px, -7px);
+
+
+    }
+
+    /* ボタンを押した時に表示される背景色。z-indexでh1を下層に移動できないだろうか…… */
+    #overlay {
+
+        height: 100vh;
+        width: 100vw;
+        background: #E3B764;
+        z-index: 3;
+        visibility: hidden;
+        position: fixed;
+        opacity: 0.95;
+        /* 不透明度を追加 */
+    }
+
+    #overlay-input:checked~header h1.animate__animated.animate__pulse.animate__repeat-2 {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s, opacity 0.3s linear;
+
+    }
+
+
+    #overlay ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        height: 100vh;
+        padding-left: 0;
+        list-style-type: none;
+    }
+
+    #overlay ul li {
+        
+        padding: 1em;
+    }
+
+    #overlay ul li a {
+        color: #504341;
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+
+    #overlay ul li a:hover {
+        color: #000 !important;
+    }
+
+    /* メニュー */
+    nav ul li {
+        padding: 0;
+    }
+
+    nav ul li span img {
+        display: none;
+    }
+
+    nav ul li a {
+        margin: 0;
+        padding: 0;
+        display: block;
+
+    }
+
+    nav ul li a:hover {
+        margin: 0;
+        padding: 0;
+        border-bottom: none;
+    }
+
+
+    nav ul li span {
+        margin: 0;
+        padding: 0;
+        padding-top: none;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+

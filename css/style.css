@@ -1,0 +1,701 @@
+@charset "UTF-8";
+
+html {
+    scroll-padding-top: 88px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 16px;
+    color: #4B4240;
+    line-height: 160%;
+    background-color: #FBFBFB;
+}
+
+.innerWrap {
+    width: 980px;
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------
+    PC_SP_共通部分
+-------------------------------------------------------------------- */
+/* ボタン */
+.roundbutton a {
+    background: #4B4240;
+    border-radius: 80px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 280px;
+    padding: 15px 25px;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+}
+
+.roundbutton a:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    right: 2rem;
+    font-size: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s;
+    width: 6px;
+    height: 6px;
+    border-top: solid 2px currentColor;
+    border-right: solid 2px currentColor;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.roundbutton a:hover {
+    background: #9d9d9d;
+    color: #fff;
+}
+
+.roundbutton a:hover:after {
+    right: 1.4rem;
+}
+/*  ポップアップ（ライトボックス）  */
+#popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+  
+    /* Flexboxで中身を中央揃え */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* 初期状態は透明にして隠す */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s; /* フェードアニメーション */
+    
+    z-index: 1000;
+    cursor: pointer;
+  }
+  
+  /* 表示状態を制御するクラス */
+  #popup-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* 画像の直接の入れ物 */
+  #popup-content {
+    position: relative;
+    cursor: default;
+  }
+  
+  /* 表示する画像本体 */
+  #popup-image {
+    /* 画面に対する最大サイズを指定し、必ず画面内に収める */
+    max-width: 80vw;
+    max-height: 90vh; /* 縦長画像が見切れないように少し高さを確保 */
+    
+    /* 見た目の調整 */
+    border-radius: 0px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  }
+  
+  /* 閉じるボタン */
+  #popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px; /* PCでのボタンサイズ */
+    height: 40px;
+    background-color: #fff;
+    color: #4B4240;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  #popup-close:hover {
+    background-color: #f9c460;
+    transform: rotate(90deg);
+  }
+
+  /* ポップアップのキャプションのスタイル */
+  #popup-caption {
+    margin-top: 12px;
+    padding: 0 8px;
+    color: #fff; 
+    font-size: 13px; 
+    line-height: 1.6;
+    text-align: center;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  
+  /* SP表示用の調整 */
+  @media screen and (max-width: 640px) {
+    #popup-close {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 20px;
+    }
+  }
+
+
+
+
+/* PC_header
+-------------------------------------------------------------------- */
+header {
+    height: 124px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    transition: background 0.2s;
+    background-color: #FBFBFB;
+}
+
+.headerScroll {
+    background: linear-gradient(rgba(251, 251, 251, 0.95) 45%, rgba(251, 251, 251, 0) 100%);
+    height: 150px;
+}
+
+/* nav */
+nav {
+    font-family: "fot-tsukubrdgothic-std", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+
+}
+
+
+h1 img {
+    padding-top: 16px;
+    filter: drop-shadow(0 0 40px rgb(251, 251, 251));
+}
+
+#heroArea img {
+    padding-top: 95px;
+}
+
+.innerWrap nav {
+    width: 980px;
+    display: flex;
+}
+
+nav ul {
+    width: 100%;
+    padding: 16px 0 0 48px;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+nav ul li a {
+    display: block;
+}
+
+/* （ナビゲーションのホバーアニメーション設定 ここから）*/
+/* (1) ナビゲーションリンクの基本設定 */
+nav ul li a {
+    position: relative; 
+    display: block;
+    padding-bottom: 12px; 
+    text-decoration: none;
+}
+/* (2) ホバー時に表示される下線のスタイル（疑似要素で作成） */
+nav ul li a::after {
+    content: ''; 
+    position: absolute;
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    /* 下線のデザイン */
+    width: 0; 
+    height: 6px; /* 下線の太さ */
+    background-color: #f9c460; /* 下線の色 */
+    border-radius: 3px; 
+    /* アニメーションの設定 */
+    transition: width 0.3s ease-in-out; 
+}
+/* (3) リンクにマウスオーバーした時の下線のスタイル */
+nav ul li a:hover::after {
+    width: 100%; /* マウスオーバー時に幅を100%に広げます */
+}
+/* （ナビゲーションのホバーアニメーション設定 ここまで）*/
+
+
+nav ul li span {
+    display: flex;
+    letter-spacing: 0.11rem;
+    padding-top: 16px;
+}
+
+nav ul li span img {
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+/* PC_main 
+-------------------------------------------------------------------- */
+#heroArea {
+    width: 1240px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#heroArea img {
+    width: 980px;
+}
+
+h2 {
+    color: #4B4240;
+
+    text-align: center;
+    font-family: "fot-tsukubrdgothic-std", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 135%;
+}
+
+/* 私について */
+#aboutArea {
+    padding: 80px 0 64px;
+}
+
+#aboutArea>.innerWrap {
+    display: flex;
+}
+
+#aboutArea>.innerWrap>img {
+    margin-right: 40px;
+    height: 100%;
+}
+
+#aboutArea>.innerWrap>div>p {
+    padding-bottom: 56px;
+}
+
+.aboutme {
+    text-align-last: left;
+    padding-bottom: 8px;
+    padding-left: 200px;
+}
+
+#aboutArea>.innerWrap>div>.roundbutton {
+    padding-left: 130px;
+}
+
+/* イラスト */
+#illustArea {
+    /* 画像が読み込めない場合の背景色 */
+    background-color: #f6f4ee;
+
+    /* 背景画像を要望の順番で3層に指定 */
+    background-image: url(../img/dansa.png),
+                      url(../img/bg_illust-image.png),
+                      url(../img/bg_gayoushi.jpg);
+
+    /* 各画像の位置を指定 */
+    background-position: top center,
+                         left bottom,
+                         top left;
+
+    /* 各画像の繰り返し方法を指定 */
+    background-repeat: repeat-x,
+                       no-repeat,
+                       repeat;
+
+    /* 各画像のスクロール設定を指定 */
+    background-attachment: scroll,
+                           scroll,
+                           scroll;
+    
+    /* 各画像のサイズを指定 */
+    background-size: auto, 80%, 95%; /* 変更点: 3番目の値を80%に変更 */
+
+    /* 一番上のレイヤー(dansa.png)の描画モードを乗算に設定 */
+    background-blend-mode: multiply;
+
+    padding-bottom: 64px;
+}
+
+
+#illustArea>.innerWrap>.roundbutton a {
+    margin: 0 auto;
+}
+.illustDesign {
+    padding: 64px 0 64px;
+    background-image: url(../img/line.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.illust-title {
+    padding: 16px;
+    background-color: #F0EDEA;
+}
+
+/* デザイン */
+#designArea {
+    padding-bottom: 64px;
+    background-image: url(../img/dansa.png), url(../img/hougan.png);
+    background-repeat: repeat-x, repeat;
+    background-position: top center, top center;
+}
+#designArea>.innerWrap>.roundbutton a {
+    margin: 0 auto;
+}
+.design-title {
+    background-color: #FBFBFB;
+    padding: 16px;
+}
+/* ▼ ポートフォリオアイテム */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 320px;
+    grid-gap: 40px;
+    padding-bottom: 80px;
+}
+
+.item {
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    /* ポートフォリオアイテムの高さを指定 */
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.item span {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    /* 光彩 */
+    text-shadow: 2px 2px 4px #fff,
+        -2px 2px 10px #fff,
+        2px -2px 10px #fff,
+        -2px -2px 10px #fff;
+    letter-spacing: 1.25px;
+}
+
+/* ▲ ポートフォリオアイテム */
+
+/* Youtubeチャンネル「ポチワン家」 */
+#youtubeArea {
+    background-color: #F7F4F1;
+    padding-bottom: 64px;
+    background-image: url(../img/dansa.png);
+    background-repeat: repeat-x;
+    background-position: top center;
+}
+
+.youtube {
+    padding: 64px 0 18px 50px;
+    background-image: url(../img/start_mark.png);
+    background-repeat: no-repeat;
+    background-position: 300px 53px;
+}
+
+#youtubeArea .innerWrap p {
+    text-align: center;
+    padding-bottom: 32px;
+}
+
+.thumbnail {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.thumbnail iframe {
+    margin: 0 auto;
+    /* 幅を可変にする */
+    aspect-ratio: 16/9;
+    /* アスペクト比を設定 */
+}
+
+/* ▼ 動画サムネ */
+
+
+/* お問い合わせ */
+#contactArea {
+    padding-bottom: 64px;
+    background-image: url(../img/dansa.png);
+    background-repeat: repeat-x;
+    background-position: top center;
+}
+
+.contact {
+    padding: 64px 0 24px;
+
+}
+
+/*フォーム*/
+form div {
+    padding-bottom: 14px;
+}
+
+label {
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    background: #E9E0D6;
+    border: 1px #fff solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    max-width: 480px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 480px;
+    height: 6rem;
+}
+
+input[type="submit"] {
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+
+}
+
+form {
+    background-image: url(../img/letter.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* 送信ボタン */
+.roundbutton_form {
+    background: #4B4240;
+    border-radius: 80px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 280px;
+    padding: 15px 25px;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+}
+
+.roundbutton_form:hover {
+    background: #9d9d9d;
+
+}
+/* リンク */
+#linkArea {
+    padding-bottom: 64px;
+    background-image: url(../img/dansa.png);
+    background-repeat: repeat-x;
+    background-position: top center;
+    background-color: #f0f0f0;
+}
+
+.link {
+    padding: 64px 0 24px;
+
+}
+
+/* PC_footer
+-------------------------------------------------------------------- */
+footer {
+    background-color: #4B4240;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+}
+
+/* =================================================================================================
+    SP
+================================================================================================= */
+
+@media screen and (max-width: 640px) {
+    html {
+        scroll-padding-top: 16px;
+    }
+
+    header {
+        height: 0px;
+        position: static;
+    }
+
+    /* 共通部分 */
+    .innerWrap,
+    .innerWrap nav,
+    header nav ul,
+    form {
+        width: 100%;
+    }
+
+
+
+    nav ul {
+        display: none;
+    }
+
+    #heroArea,
+    #aboutArea {
+        width: 100%;
+    }
+
+    /*  SP_main
+-------------------------------------------------------------------- */
+    /* ヒーローイメージ */
+    #heroArea {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #heroArea img {
+        transform: translate(-40%, -5%) scale(0.75);
+
+    }
+
+    h1 {
+        padding: 8px 0 0 16px;
+
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    /* 私について */
+    #aboutArea {
+        padding: 0 0 20px 0;
+
+    }
+
+    #aboutArea>.innerWrap {
+        flex-direction: column;
+
+    }
+
+    .innerWrap div .aboutme {
+        padding: 8px 120px 14px 140px;
+    }
+
+    #aboutArea .innerWrap>img {
+        width: 180px;      /* 横幅を200pxに指定 */
+        display: block;    /* 中央寄せのためにブロック要素に変換 */
+        margin: 0 auto;    /* 左右の余白を自動で調整して中央に配置 */
+    }
+
+    #aboutArea>.innerWrap>div>p {
+        padding: 8px 16px 32px 16px;
+        text-align: center;
+    }
+
+    #aboutArea>.innerWrap>div>.roundbutton {
+        padding-left: 50px;
+        padding-bottom: 32px;
+    }
+
+    /* デザイン */
+    /* イラスト */
+    /* ▼ ポートフォリオアイテム */
+    .grid {
+        grid-template-columns: repeat(2, 1fr); 
+        grid-auto-rows: auto; /* PC用の高さ設定をリセット */
+        grid-gap: 12px; /* 隙間を少し調整 */
+        padding: 0 16px 80px 16px;
+    }
+    
+    .item {
+        aspect-ratio: 1 / 1; 
+        /* アイテムを正方形に */
+    }
+    .date{font-size: 14px;}
+
+    /* ▲ ポートフォリオアイテム */
+    /* 動画 */
+    .youtube {
+        padding: 64px 0 18px 50px;
+        background-image: url(../img/start_mark.png);
+        background-repeat: no-repeat;
+        background-position: 38px 63px;
+        background-size: 15% auto;
+        /* 幅を50%、高さを自動で拡大縮小 */
+    }
+  
+
+    /* お問い合わせ */
+    #contactArea {
+        padding: 16px 16px 64px 16px;
+        /* background-image: url(../img/dansa.png);
+    background-repeat: repeat-x;
+    background-position: top center; */
+    }
+
+    form {
+        background-image: none;
+        /* 背景画像を非表示にする */
+    }
+
+    input[type="submit"] {
+        border: none;
+        cursor: pointer;
+        line-height: 1;
+        margin: 0 auto;
+
+    }
+    /* リンク */
+    #linkArea {
+        padding: 16px 16px 64px 16px;
+
+    }
+
+}
+
+
