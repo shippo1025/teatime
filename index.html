@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- CSS -->
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/hamburger.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- CSS /-->
+  <title>ちょっといっぷく。</title>
+  <meta name="description" content="今までの作品集です">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/typekit.js" defer></script>
+  <script src="js/scroll.js" defer></script>
+  <script src="js/hamburger.js" defer></script>
+  <script src="js/loadmore.js" defer></script>
+  <script src="js/popup.js" defer></script>
+  <!-- JS /-->
+
+  <!-- Google analytics tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LH9R6DS13K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LH9R6DS13K');
+</script>
+<!-- Google analytics tag (gtag.js) /-->
+</head>
+
+<body>
+
+  <!-- ハンバーガー-->
+  <input type="checkbox" id="overlay-input" />
+  <label for="overlay-input" id="overlay-button"><span></span></label>
+  <!-- ハンバーガー/-->
+  <header id="overlay">
+    <div class="innerWrap">
+      <nav>
+        <h1 class="animate__animated animate__pulse animate__repeat-2"><a href="#"><img src="img/rogo.svg"
+              alt="ちょっといっぷく。"></a></h1>
+        <ul>
+          <li><a href="#" class="home" onclick="closeOverlay()"><span><img src="img/home.svg"
+                  alt="ホーム"></span><span>ホーム</span></a></li>
+          <li><a href="#aboutArea" onclick="closeOverlay()"><span><img src="img/me.svg"
+                  alt="私について"></span><span>私について</span></a></li>
+                  <li><a href="#illustArea" onclick="closeOverlay()"><span><img src="img/illust.svg"
+                    alt="イラスト"></span><span>イラスト</span></a></li>
+          <li><a href="#designArea" onclick="closeOverlay()"><span><img src="img/design.svg"
+                  alt="デザイン"></span><span>デザイン</span></a></li>
+          <li><a href="#youtubeArea" onclick="closeOverlay()"><span><img src="img/movie.svg"
+                  alt="動画"></span><span>動画</span></a></li>
+          <li><a href="#contactArea" onclick="closeOverlay()"><span><img src="img/contact.svg"
+                  alt="お問い合わせ"></span><span>感想を送る</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <p id="heroArea"><img src="img/top-image.png" alt="トップ画像"></p>
+    <section id="aboutArea">
+
+      <div class="innerWrap">
+        <img src="img/shippo.png" alt="私です">
+
+        <div>
+          <h2 class="aboutme"><span>私について</span></h2>
+          <p>
+            お越しいただきありがとうございます。<br>
+            しっぽと申します！<br>
+            このサイトは、趣味で描いているものをまとめたサイトです。<br>
+            のんびりしていってください♪
+          </p>
+          <!--<div class="roundbutton"><a href="#">ボタン</a></div>-->
+        </div>
+      </div>
+    </section>
+
+    <section id="illustArea">
+      <div class="innerWrap">
+
+        <h2 class="illustDesign"><span class="illust-title">イラスト</span></h2>
+        <!-- イラストギャラリー -->
+        <div class="grid">
+          <div class="item" data-caption="青空と桜">
+            <img src="img/gallery/illust/2026_0410.jpg" alt=""><br><span class="date">2026/04/10</span>
+          </div>
+          <div class="item" data-caption="虎杖悠仁<br>「呪術廻戦」より">
+            <img src="img/gallery/illust/2026_0409.jpg" alt=""><br><span class="date">2026/04/09</span>
+          </div>
+                    <div class="item" data-caption="柴犬と桜">
+            <img src="img/gallery/illust/2026_0212.jpg" alt=""><br><span class="date">2026/02/12</span>
+          </div>
+          <div class="item" data-caption="蒼月草<br>「葬送のフレーレン」より">
+            <img src="img/gallery/illust/2026_0126.jpg" alt=""><br><span class="date">2026/01/26</span>
+          </div>
+          <div class="item" data-caption="ひょこっ♪<br>「ピクミン」より">
+            <img src="img/gallery/illust/2025_1213.jpg" alt=""><br><span class="date">2026/01/26</span>
+          </div>
+          <div class="item" data-caption="カラモ<br>「ゼルダ無双 封印戦記」より">
+            <img src="img/gallery/illust/2025_1119.jpg" alt=""><br><span class="date">2025/11/19</span>
+          </div>
+          <div class="item" data-caption="天体観測">
+            <img src="img/gallery/illust/2025_1026.jpg" alt=""><br><span class="date">2025/10/26</span>
+          </div>
+          <div class="item" data-caption="秋集め">
+            <img src="img/gallery/illust/2025_1009.jpg" alt=""><br><span class="date">2025/10/09</span>
+          </div>
+
+          <div class="item" data-caption="コスモス">
+            <img src="img/gallery/illust/2025_0910.jpg" alt=""><br><span class="date">2025/09/10</span>
+          </div>
+          <div class="item" data-caption="入道雲">
+            <img src="img/gallery/illust/2025_0817.jpg" alt=""><br><span class="date">2025/08/17</span>
+          </div>
+          <div class="item" data-caption="春は色んな香り">
+            <img src="img/gallery/illust/2025_0811.png" alt=""><br><span class="date">2025/08/11</span>
+          </div>
+          <div class="item" data-caption="ミステリアスなララァさん<br>「ガンダムジークアクス」より">
+            <img src="img/gallery/illust/2025_07.png" alt=""><br><span class="date">2025/07</span>
+          </div>
+          <div class="item" data-caption="ゼルダ無双が楽しみです<br>「ゼルダの伝説 ティアーズ オブ ザ キングダム」より">
+            <img src="img/gallery/illust/2025_04.png" alt=""><br><span class="date">2025/04</span>
+          </div>
+          <div class="item" data-caption="雨あがりと女の子">
+            <img src="img/gallery/illust/2024_0519.png" alt=""><br><span class="date">2024/05/19</span>
+          </div>
+          <div class="item" data-caption="彩の秋">
+            <img src="img/gallery/illust/2022_1024.png" alt=""><br><span class="date">2022/10/24</span>
+          </div>
+          <div class="item" data-caption="アマビエさん">
+            <img src="img/gallery/illust/2022_0428.png" alt=""><br><span class="date">2022/04/28</span>
+          </div>
+          <div class="item" data-caption="レオナ姫って可愛い！「ダイの大冒険」より">
+            <img src="img/gallery/illust/2022_0416.png" alt=""><br><span class="date">2022/04/16</span>
+          </div>
+          <div class="item" data-caption="「ドーナツ好き子」さんと名付けました">
+            <img src="img/gallery/illust/2020_0921.png" alt=""><br><span class="date">2020/09/21</span>
+          </div>
+          <div class="item" data-caption="日向ぼっこする女の子とうさぎ">
+            <img src="img/gallery/illust/2020_0507.png" alt=""><br><span class="date">2020/05/07</span>
+          </div>
+          <div class="item" data-caption="桜の木と柴犬">
+            <img src="img/gallery/illust/2018_1207.png" alt=""><br><span class="date">2018/12/07</span>
+          </div>
+          <div class="item" data-caption="ボールペンでリンゴの木">
+            <img src="img/gallery/illust/2018_02.png" alt=""><br><span class="date">2018/02</span>
+          </div>
+          <div class="item" data-caption="どこかに鶯がいます">
+            <img src="img/gallery/illust/2014_02.png" alt=""><br><span class="date">2014/02</span>
+          </div>
+          <div class="item" data-caption="今日は7月7日">
+            <img src="img/gallery/illust/2012_07.png" alt=""><br><span class="date">2012/07</span>
+          </div>
+
+        </div>
+        <!-- イラストギャラリー /-->
+        <div class="roundbutton"><a href="#">もっと見る</a></div>
+
+      </div>
+    </section>
+
+    <section id="designArea">
+      <div class="innerWrap">
+        <h2 class="illustDesign"><span class="design-title">デザイン</span></h2>
+        <!-- デザインギャラリー -->
+        <div class="grid">
+          <div class="item" data-caption="デジハリのお祭りに参加した時のものです">
+            <img src="img/gallery/design/2023_12.png" alt=""><br><span class="date">2023/12</span>
+          </div>
+          <div class="item" data-caption="ブログとしてリニューアルしようとした時のもの。<br>livedoorブログさんを使いました">
+            <img src="img/gallery/design/2022_08.png" alt=""><br><span class="date">2022/08</span>
+          </div>
+          <div class="item" data-caption="昔運営していたサイトです！（ひっそり紹介）">
+            <img src="img/gallery/design/2015_0305.png" alt=""><br><span class="date">2015/03/05</span>
+          </div>
+          <div class="item" data-caption="ピザ屋さんをイメージして">
+            <img src="img/gallery/design/2014_08.png" alt=""><br><span class="date">2014/08</span>
+          </div>
+          <div class="item" data-caption="写真サイトをイメージして">
+            <img src="img/gallery/design/2014_05.png" alt=""><br><span class="date">2014/05</span>
+          </div>
+          <div class="item" data-caption="風船と空">
+            <img src="img/gallery/design/line_06.png" alt=""><br><span class="date">LINE着替え</span>
+          </div>
+          <div class="item" data-caption="ガーリーなお部屋">
+            <img src="img/gallery/design/line_05.png" alt=""><br><span class="date">LINE着替え</span>
+          </div>
+          <div class="item" data-caption="お花見びより">
+            <img src="img/gallery/design/line_04.png" alt=""><br><span class="date">LINE着替え</span>
+          </div>
+          <div class="item" data-caption="四葉はどこだ？">
+            <img src="img/gallery/design/line_03.png" alt=""><br><span class="date">LINE着替え</span>
+          </div>
+          <div class="item" data-caption="ハッピーハロウィン">
+            <img src="img/gallery/design/line_02.png" alt=""><br><span class="date">LINE着替え</span>
+          </div>
+          <div class="item" data-caption="グラスグリーン">
+            <img src="img/gallery/design/line_01.png" alt=""><br><span class="date">LINE着替え</span>
+          </div>
+        </div>
+        <!-- デザインギャラリー /-->
+        <div class="roundbutton"><a href="#">もっと見る</a></div>
+      </div>
+    </section>
+
+
+
+    <section id="youtubeArea">
+      <div class="innerWrap">
+
+        <h2 class="youtube">Youtubeチャンネル</h2>
+        <p>ぜひ観にいってね！</p>
+
+        <!-- 動画のサムネイル -->
+        <div class="thumbnail">
+          <iframe src="https://www.youtube.com/embed/sM-IhGPYp6c?si=MgQRAFC5m2KqUH5x" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <!-- 動画のサムネイル /-->
+
+      </div>
+    </section>
+
+    <section id="contactArea">
+      <div class="innerWrap">
+
+        <h2 class="contact">感想を送る</h2>
+        <!-- フォーム -->
+        <form
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSet5_9ivCBTUA3dnDdZElCy60Z-9WjfUg9HVZvfC9fhvJNdYg/formResponse"
+          method="post" target="hidden_iframe" onsubmit="submitted=true;">
+          <div>
+            <label for="name">お名前</label>
+            <input type="text" id="name" name="entry.2005620554">
+          </div>
+          <div>
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="entry.1045781291">
+          </div>
+          <div>
+            <label for="message">メッセージ</label>
+            <textarea id="message" name="entry.839337160"></textarea>
+          </div>
+          <input type="submit" class="roundbutton_form" value="送信">
+        </form>
+        <script type="text/javascript">var submitted = false;</script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+          onload="if(submitted){window.location='contact_end.html';}"></iframe>
+        <!--Googleフォーム
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSet5_9ivCBTUA3dnDdZElCy60Z-9WjfUg9HVZvfC9fhvJNdYg/viewform?embedded=true" width="640" height="705" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+    /Googleフォーム-->
+
+      </div>
+    </section>
+
+    <section id="linkArea">
+      <div class="innerWrap"><div>
+        <h2 class="link"><span>リンク</span></h2>
+        <p>
+          リンクさんを並べる予定です
+        </p>
+      </div></div>
+    </section>
+  </main>
+  
+  <div id="popup-overlay">
+    <div id="popup-content">
+      <img id="popup-image" src="" alt="拡大画像">
+      <p id="popup-caption"></p>
+      <span id="popup-close">×</span>
+    </div>
+  </div>
+
+  <footer>
+    <p><small>Copyright © 2025 shippo</small></p>
+  </footer>
+</body>
+
+</html>
